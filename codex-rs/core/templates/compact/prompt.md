@@ -3,6 +3,7 @@ You are performing a CONTEXT CHECKPOINT COMPACTION. Create a handoff summary for
 Include:
 - Current progress and key decisions made
 - Important context, constraints, or user preferences
+- User corrections and rejected approaches (what NOT to do again)
 - What remains to be done (clear next steps)
 - Any critical data, examples, or references needed to continue
 

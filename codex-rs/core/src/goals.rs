@@ -1706,7 +1706,7 @@ mod tests {
         assert!(prompt.contains("supersedes any previous thread goal objective"));
         assert!(
             prompt.contains(
-                "<untrusted_objective>\nfinish the revised stack\n</untrusted_objective>"
+                "<objective>\nfinish the revised stack\n</objective>"
             )
         );
         assert!(prompt.contains("Token budget: 10000"));

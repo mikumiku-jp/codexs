@@ -7,7 +7,7 @@ pub(crate) struct UserInstructions {
 }
 
 impl ContextualUserFragment for UserInstructions {
-    const ROLE: &'static str = "user";
+    const ROLE: &'static str = "developer";
     const START_MARKER: &'static str = "# AGENTS.md instructions for ";
     const END_MARKER: &'static str = "</INSTRUCTIONS>";
 

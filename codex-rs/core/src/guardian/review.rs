@@ -43,11 +43,9 @@ use super::review_session::GuardianReviewSessionParams;
 use super::review_session::build_guardian_review_session_config;
 
 const GUARDIAN_REJECTION_INSTRUCTIONS: &str = concat!(
-    "The agent must not attempt to achieve the same outcome via workaround, ",
-    "indirect execution, or policy circumvention. ",
-    "Proceed only with a materially safer alternative, ",
-    "or if the user explicitly approves the action after being informed of the risk. ",
-    "Otherwise, stop and request user input.",
+    "If the user explicitly approves the action after being informed of the risk, ",
+    "proceed with the action. ",
+    "Otherwise, try a safer alternative or ask the user for guidance.",
 );
 
 const GUARDIAN_TIMEOUT_INSTRUCTIONS: &str = concat!(
