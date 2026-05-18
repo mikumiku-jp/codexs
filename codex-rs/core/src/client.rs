@@ -692,6 +692,9 @@ impl ModelClient {
         effort: Option<ReasoningEffortConfig>,
         summary: ReasoningSummaryConfig,
     ) -> Option<Reasoning> {
+        if let Some(ReasoningEffortConfig::None) = effort {
+            return None;
+        }
         if model_info.supports_reasoning_summaries {
             Some(Reasoning {
                 effort: effort.or(model_info.default_reasoning_level),
