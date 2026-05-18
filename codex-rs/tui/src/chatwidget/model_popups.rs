@@ -518,7 +518,7 @@ impl ChatWidget {
 
     pub(super) fn reasoning_effort_label(effort: ReasoningEffortConfig) -> &'static str {
         match effort {
-            ReasoningEffortConfig::None => "None",
+            ReasoningEffortConfig::None => "Off (no reasoning)",
             ReasoningEffortConfig::Minimal => "Minimal",
             ReasoningEffortConfig::Low => "Low",
             ReasoningEffortConfig::Medium => "Medium",
