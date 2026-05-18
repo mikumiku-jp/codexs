@@ -369,12 +369,13 @@ impl ChatWidget {
         effort: Option<ReasoningEffortConfig>,
     ) -> &'static str {
         match effort {
+            Some(ReasoningEffortConfig::None) => "off",
             Some(ReasoningEffortConfig::Minimal) => "minimal",
             Some(ReasoningEffortConfig::Low) => "low",
             Some(ReasoningEffortConfig::Medium) => "medium",
             Some(ReasoningEffortConfig::High) => "high",
             Some(ReasoningEffortConfig::XHigh) => "xhigh",
-            None | Some(ReasoningEffortConfig::None) => "default",
+            None => "default",
         }
     }
 }
