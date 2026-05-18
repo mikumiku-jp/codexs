@@ -62,6 +62,7 @@ pub enum SlashCommand {
     Stop,
     Clear,
     Personality,
+    Thinking,
     Realtime,
     Settings,
     TestApproval,
@@ -109,6 +110,7 @@ impl SlashCommand {
                 "include current selection, open files, and other context from your IDE"
             }
             SlashCommand::Personality => "choose a communication style for Codex",
+            SlashCommand::Thinking => "toggle thinking/reasoning effort (off, low, medium, high)",
             SlashCommand::Realtime => "toggle realtime voice mode (experimental)",
             SlashCommand::Settings => "configure realtime microphone/speaker",
             SlashCommand::Plan => "switch to Plan mode",
@@ -182,7 +184,6 @@ impl SlashCommand {
             | SlashCommand::Compact
             | SlashCommand::Model
             | SlashCommand::Personality
-            | SlashCommand::Permissions
             | SlashCommand::Keymap
             | SlashCommand::Vim
             | SlashCommand::ElevateSandbox
@@ -217,7 +218,9 @@ impl SlashCommand {
             | SlashCommand::Ide
             | SlashCommand::Quit
             | SlashCommand::Exit
-            | SlashCommand::Side => true,
+            | SlashCommand::Side
+            | SlashCommand::Thinking
+            | SlashCommand::Permissions => true,
             SlashCommand::Rollout => true,
             SlashCommand::TestApproval => true,
             SlashCommand::Realtime => true,

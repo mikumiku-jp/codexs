@@ -516,6 +516,17 @@ impl ChatWidget {
         });
     }
 
+    pub(super) fn open_thinking_popup(&mut self) {
+        let Some(preset) = self.current_model_preset() else {
+            self.add_info_message(
+                "Thinking settings are unavailable for the current model.".to_string(),
+                None,
+            );
+            return;
+        };
+        self.open_reasoning_popup(preset);
+    }
+
     pub(super) fn reasoning_effort_label(effort: ReasoningEffortConfig) -> &'static str {
         match effort {
             ReasoningEffortConfig::None => "Off (no reasoning)",
