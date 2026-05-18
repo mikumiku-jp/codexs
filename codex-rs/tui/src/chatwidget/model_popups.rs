@@ -375,7 +375,14 @@ impl ChatWidget {
             display: ReasoningEffortConfig,
         }
         let mut choices: Vec<EffortChoice> = Vec::new();
+        choices.push(EffortChoice {
+            stored: Some(ReasoningEffortConfig::None),
+            display: ReasoningEffortConfig::None,
+        });
         for effort in ReasoningEffortConfig::iter() {
+            if effort == ReasoningEffortConfig::None {
+                continue;
+            }
             if supported.iter().any(|option| option.effort == effort) {
                 choices.push(EffortChoice {
                     stored: Some(effort),
@@ -383,7 +390,7 @@ impl ChatWidget {
                 });
             }
         }
-        if choices.is_empty() {
+        if choices.len() <= 1 {
             choices.push(EffortChoice {
                 stored: Some(default_effort),
                 display: default_effort,

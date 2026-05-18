@@ -130,6 +130,9 @@ fn reasoning_choices(preset: &ModelPreset) -> Vec<ReasoningEffortConfig> {
             choices.push(effort);
         }
     }
+    if !choices.contains(&ReasoningEffortConfig::None) {
+        choices.insert(0, ReasoningEffortConfig::None);
+    }
     if choices.is_empty() {
         choices.push(preset.default_reasoning_effort);
     }
