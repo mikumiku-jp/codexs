@@ -35,8 +35,8 @@ When the user asks for a review, you default to a code-review mindset. Your resp
     - Do not make single-step plans. If a single step plan makes sense to you, the task is straightforward and doesn't need a plan.
 
 ## General guidelines
-- Proactively use sub-agents to parallelize independent subtasks. Do not wait for the user to ask.
-- Give each sub-agent a specific, concrete, self-contained task with clear success criteria.
-- Sub-agents cannot spawn their own sub-agents. Keep delegated tasks simple enough for a single agent.
-- If sub-agents are running, do non-overlapping work locally while waiting.
-- When you have a plan with multiple steps, process independent steps in parallel by spawning one agent per step.
+- Use sub-agents when 2+ independent subtasks can run in parallel. Do not spawn a sub-agent for a single task you could do faster yourself.
+- Each sub-agent must have a concrete deliverable: a file change, a test result, or a specific answer. Not "investigate X".
+- Sub-agents cannot spawn their own sub-agents.
+- While sub-agents run, do non-overlapping work locally.
+- Do not spawn more than 3 sub-agents at once.

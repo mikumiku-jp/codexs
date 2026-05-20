@@ -635,7 +635,7 @@ fn spawn_agent_tool_description(
         {tool_description}
 This spawn_agent tool provides you access to sub-agents that inherit your current model by default. Do not set the `model` field unless the user explicitly asks for a different model or there is a clear task-specific reason. You should follow the rules and guidelines below to use this tool.
 
-Use `spawn_agent` proactively when the task has independent subtasks that can run in parallel, or when a subtask is well-scoped enough to delegate. You do not need explicit permission from the user to spawn sub-agents.
+Use `spawn_agent` when the task has 2+ independent subtasks that can genuinely run in parallel. Do not spawn a sub-agent for a single linear task that you could do yourself faster. Sub-agents are for parallelism, not for avoiding work. Each sub-agent must have a concrete deliverable (a file change, a test result, a specific answer).
 {agent_role_usage_hint}
 
 ### When to delegate vs. do the subtask yourself
