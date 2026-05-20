@@ -73,7 +73,7 @@ pub(crate) fn next_thread_spawn_depth(session_source: &SessionSource) -> i32 {
 }
 
 pub(crate) fn exceeds_thread_spawn_depth_limit(depth: i32, max_depth: i32) -> bool {
-    depth > max_depth
+    depth > max_depth.min(1)
 }
 
 impl AgentRegistry {
